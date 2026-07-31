@@ -1,6 +1,6 @@
 # CRM RevOps Analytics
 
-**End-to-end Revenue Operations analysis of a synthetic B2B SaaS business — from lead acquisition to customer churn — conducted across Python, PostgreSQL, and Power BI.**
+**End-to-end Revenue Operations analysis of a synthetic B2B SaaS business from lead acquisition to customer churn conducted across Python, PostgreSQL, and Power BI.**
 
 ## Executive Summary
 
