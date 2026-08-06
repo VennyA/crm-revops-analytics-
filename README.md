@@ -106,10 +106,18 @@ The following steps were performed across all seven tables:
 - Records with invalid values were set to null rather than deleted, preserving all other valid fields for analysis. This approach ensured that data integrity while maintaining maximum record coverage across all seven tables.
 
 **Data Modelling**
-A relational schema was designed in Power BI following the natural B2B customer journey:
+A snowflake schema was designed in Power BI with `crm_leads` as the central table, connected to all other tables:
 
+* crm_companies → crm_leads (via company_id)
+* crm_leads → crm_deals (via lead_id)
+* crm_leads → crm_customers (via lead_id)
+* crm_customers → crm_churn (via customer_id)
+* crm_pricing → crm_deals (via plan_id)
+* crm_deals → crm_buyer_evidence (via deal_id)
 
-A DimDate calendar table was created and connected to customers via `contract_start_date`and deals through close_date
+A DimDate calendar table was created with two active relationships:
+* DimDate → crm_customers (via contract_start_date)
+* DimDate → crm_deals (via close_date)
 
 **DAX Measures**
 
@@ -130,3 +138,4 @@ A DimDate calendar table was created and connected to customers via `contract_st
 | Expansion Revenue % | Expansion ARR as % of total ARR |
 | Healthy Customers % | % of customers classified as Healthy |
 | Win-Back Success Rate | Successful win-backs / Total win-back attempts |
+
