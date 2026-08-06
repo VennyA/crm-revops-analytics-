@@ -1,10 +1,10 @@
 # CRM RevOps Analytics
 
-**End-to-end Revenue Operations analysis of a synthetic B2B SaaS business from lead acquisition to customer churn conducted across Python, PostgreSQL, and Power BI.**
+**End to end Revenue Operations analysis of a synthetic B2B SaaS business from lead acquisition to customer churn conducted across Python, PostgreSQL, and Power BI.**
 
 ## Executive Summary
 
-This project simulates a real-world Revenue Operations and CRM Analytics engagement for a B2B SaaS company operating across five global regions. Using a synthetic dataset containing 10,000 leads across seven interconnected tables, I analyzed the entire customer lifecycle from lead acquisition and sales conversion to revenue generation, customer retention, and overall business health.
+This project simulates a real world Revenue Operations and CRM Analytics engagement for a B2B SaaS company operating across five global regions. Using a synthetic dataset containing 10,000 leads across seven interconnected tables, I analyzed the entire customer lifecycle from lead acquisition and sales conversion to revenue generation, customer retention, and overall business health.
 
 The analysis was structured around six core business questions:
 
@@ -42,7 +42,7 @@ This project matters because it mirrors how a working RevOps or CRM Analyst oper
 
 ## Data Source
 
-The dataset is a synthetic B2B SaaS CRM dataset generated using Python (Faker library) and Claude AI, designed to simulate realistic revenue operations data with intentional data quality issues — including inconsistent formatting, missing values, duplicates, and outliers — to mirror real-world CRM exports.
+The dataset is a synthetic B2B SaaS CRM dataset generated using Python (Faker library) and Claude AI, designed to simulate realistic revenue operations data with intentional data quality issues including inconsistent formatting, missing values, duplicates, and outliers  to mirror real world CRM exports.
 
 | Table | Rows | Columns | Description |
 |-------|------|---------|-------------|
@@ -60,7 +60,7 @@ The dataset is a synthetic B2B SaaS CRM dataset generated using Python (Faker li
 - Synthetic data may not capture all real-world CRM complexities
 - 45 customer records have no plan tier — $1.4M in ARR is unattributed for 
 - Health scores may be understated due to data quality issues in the metrics
-- All relationships are single-direction 1:Many. Deals and customers are independent branches off leads and do not connect directly to each other.
+- All relationships are single direction 1:Many. Deals and customers are independent branches off leads and do not connect directly to each other.
 
 
 ## Problem Statement
