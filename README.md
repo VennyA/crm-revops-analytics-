@@ -58,8 +58,8 @@ The dataset is a synthetic B2B SaaS CRM dataset generated using Python (Faker li
 
 **Limitations:**
 - Synthetic data may not capture all real-world CRM complexities
-- 45 customer records have no plan tier — $1.4M in ARR is unattributed
-- Health scores may be understated due to data quality issues in underlying metrics
+- 45 customer records have no plan tier — $1.4M in ARR is unattributed for 
+- Health scores may be understated due to data quality issues in the metrics
 - All relationships are single-direction 1:Many. Deals and customers are independent branches off leads and do not connect directly to each other.
 
 
@@ -80,3 +80,53 @@ To answer this, the analysis was structured around six business questions:
 5. **Are we keeping them?** — What is driving churn and how effective are retention efforts?
 6. **How healthy is the business overall?** — What does the pipeline, NRR, and forecast reliability tell us?
 
+
+## Tools & Methodology
+
+### Tools Used
+
+| Tool | Purpose |
+|------|---------|
+| Python (Google Colab) | Exploratory data analysis, data cleaning, and quality checks |
+| PostgreSQL | Analytical SQL queries across all business questions |
+| Power BI | Data modelling, DAX measures, and interactive dashboard |
+
+### Methodology
+
+**Data Collection**
+The dataset was synthetically generated using Python (Faker library) and Claude AI, then loaded into Google Colab as seven CSV files for initial exploration and cleaning.
+
+**Data Cleaning & Preparation**
+The following steps were performed across all seven tables:
+- Standardized inconsistent categorical values (industry, region, plan tier, funnel stage)
+- Removed 180 duplicate lead records identified through contact email and company ID matching
+- Set negative deal values and out of range NPS and usage scores to null
+- Converted all date columns from mixed text formats to datetime
+- Documented expected nulls vs data quality gaps separately
+- Records with invalid values were set to null rather than deleted, preserving all other valid fields for analysis. This approach ensured that data integrity while maintaining maximum record coverage across all seven tables.
+
+**Data Modelling**
+A relational schema was designed in Power BI following the natural B2B customer journey:
+
+
+A DimDate calendar table was created and connected to customers via `contract_start_date`and deals through close_date
+
+**DAX Measures**
+
+| Measure | Description |
+|---------|-------------|
+| Revenue (ARR) | Total ARR from converted customers |
+| MRR | Total monthly recurring revenue |
+| NRR | Net Revenue Retention — (ARR + Expansion - Churned ARR) / ARR |
+| Win Rate | Closed Won / (Closed Won + Closed Lost) |
+| Churn Rate | Churned customers / Total customers |
+| Weighted Pipeline | Sum of deal value × probability for open deals only |
+| ICP Score | Composite score combining conversion rate, win rate, and churn rate |
+| Pipeline Velocity | (Opportunities × Win Rate × Avg Deal Value) / Sales Cycle |
+| Avg Sales Cycle | Average days from lead creation to deal close (Closed Won only) |
+| Auto-Renewal Rate | % of customers on auto-renewal |
+| Customers Due for Renewal | Customers with contract end date within 90 days |
+| Renewal Revenue at Risk | ARR from customers not on auto-renewal |
+| Expansion Revenue % | Expansion ARR as % of total ARR |
+| Healthy Customers % | % of customers classified as Healthy |
+| Win-Back Success Rate | Successful win-backs / Total win-back attempts |
