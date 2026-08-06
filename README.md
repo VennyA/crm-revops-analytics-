@@ -139,3 +139,38 @@ A DimDate calendar table was created with two active relationships:
 | Healthy Customers % | % of customers classified as Healthy |
 | Win-Back Success Rate | Successful win-backs / Total win-back attempts |
 
+
+## Exploratory Data Analysis (EDA)
+
+An in depth EDA was conducted across all seven tables to assess data quality, understand distributions, and identify patterns before analysis.
+
+### Structure
+All six primary keys were confirmed unique across their respective tables. Foreign key integrity was validated, all relationships returned 100% match rates, confirming no ununique records across the schema.
+
+### Key Patterns
+Significant inconsistent formatting was identified across categorical columns including `industry`, `region`, `company_size`, `funnel_stage`, `plan_tier`, and `lead_source`. The same values appeared in multiple formats — mixed casing, abbreviations, spacing variations, and alternate labels for the same category (e.g. "MQL", "Marketing Qualified", "marketing qualified lead"). Standardisation was required before any grouping or aggregation.
+
+### Distributions
+Deal values showed a wide spread ranging from negative values (data entry errors) to over $5.6M (inflated outliers). MRR ranged from $46 to $21,843 per customer, indicating a mix of small Starter plan accounts and large Enterprise accounts. Days to close ranged from under 10 days to over 100 days depending on deal complexity and segment.
+
+### Trends
+Revenue from new contracts grew consistently from $11M in 2022 to $15.7M in 2024. Churn decreased as a proportion of the customer base over the same period. 2025 figures represent partial year data (January to October) and are not directly comparable to full prior years.
+
+### Outliers
+Several columns contained impossible or inflated values requiring correction:
+- 12 records with negative `deal_value_annual_usd` — set to null
+- 5 records with inflated deal values exceeding $3M — set to null
+- 15 records with `nps_score` outside the valid 0–10 range — set to null
+- 10 records with `product_usage_score` outside the valid 0–100 range — set to null
+- 1 record with negative `days_to_churn` — set to null
+- 5 records with `health_score` above 100 — set to null
+
+### Data Quality
+Missing values were categorised as either **expected nulls** (structurally correct gaps, such as null `days_lead_to_mql` for leads that never became MQLs) or **data quality problems** (fields that should have values but don't, such as 45 customers with no plan tier and 49 deals with no deal value recorded). All nulls were retained rather than filled or deleted, with each decision documented.
+
+### Correlations
+- **Health score and churn** — Critical customers churned at 32.4% vs 5% for Healthy customers — strong relationship
+- **Product usage score and churn** — low usage scores were associated with higher churn probability
+- **Buyer evidence score and rep deal probability** — 0.44 correlation — moderate, not strong
+- **Discount % and win rate** — no meaningful correlation — higher discounts did not lead to higher win rates
+- **NPS score and churn** — lower NPS customers churned more frequently
