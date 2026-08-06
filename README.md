@@ -40,4 +40,43 @@ The business context simulates a company that needs a centralized view of its ov
 This project matters because it mirrors how a working RevOps or CRM Analyst operates in practice. Starting from messy and incomplete data, making structured cleaning decisions, conducting layered analysis across multiple tools, and translating findings into business recommendations that leadership can act on.
 
 
+## Data Source
+
+The dataset is a synthetic B2B SaaS CRM dataset generated using Python (Faker library) and Claude AI, designed to simulate realistic revenue operations data with intentional data quality issues — including inconsistent formatting, missing values, duplicates, and outliers — to mirror real-world CRM exports.
+
+| Table | Rows | Columns | Description |
+|-------|------|---------|-------------|
+| crm_companies | 8,811 | 18 | Company firmographics and account details |
+| crm_leads | 10,000 | 25 | Lead records with funnel stage and contact info |
+| crm_deals | 1,659 | 18 | Deal pipeline with stage, value, and competitor data |
+| crm_customers | 871 | 21 | Converted customers with health and contract data |
+| crm_churn | 207 | 14 | Churned customer records with reasons and win-back data |
+| crm_pricing | 4 | 22 | Plan tier pricing and feature details |
+| crm_buyer_evidence | 1,659 | 11 | Buyer engagement signals per deal |
+
+**Data type:** Transactional B2B CRM data spanning 2022–2025
+
+**Limitations:**
+- Synthetic data may not capture all real-world CRM complexities
+- 45 customer records have no plan tier — $1.4M in ARR is unattributed
+- Health scores may be understated due to data quality issues in underlying metrics
+- All relationships are single-direction 1:Many. Deals and customers are independent branches off leads and do not connect directly to each other.
+
+
+## Problem Statement
+
+Despite generating $43.9M in ARR, the business seems to be having critical questions about the sustainability of its growth. Revenue is coming in, but customer retention is uncertain, outbound sales efforts are not producing enough conversions, and leadership lacks a unified view of commercial performance across the full customer lifecycle.
+
+The core challenge is this: **is the business growing in a healthy, sustainable way  or is it masking underlying problems in retention, pipeline quality, and customer fit?**
+
+Without clear answers, the business risks continuing to invest in the wrong segments, losing high-value customers to preventable churn, and making revenue forecasts that don't reflect actual buyer commitment.
+
+To answer this, the analysis was structured around six business questions:
+
+1. **Who should we be targeting?** — Which industries, regions, and company sizes convert best and generate the most value?
+2. **How are we attracting them?** — Which lead sources and campaigns drive the highest quality leads?
+3. **How are we converting them?** — Where is the funnel breaking down and how long does it take to close?
+4. **How much are they worth?** — What is the revenue contribution by plan, segment, and deal type?
+5. **Are we keeping them?** — What is driving churn and how effective are retention efforts?
+6. **How healthy is the business overall?** — What does the pipeline, NRR, and forecast reliability tell us?
 
