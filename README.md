@@ -197,3 +197,114 @@ Customer health score is the strongest early warning signal for churn, Critical 
 
 ### 7. Pipeline at Risk
 Despite a $211.55M weighted pipeline, $13.23M in ARR is at risk from upcoming renewals concentrated in Critical and At Risk accounts. Customer retention is the primary lever for protecting forecast reliability and future revenue.
+
+
+
+Visuals Preview
+-Dashboard Screenshots-
+
+<img width="614" height="341" alt="B2B CRM REVOPS OVERVIEW" src="https://github.com/user-attachments/assets/89e47107-c1f1-4f60-ad87-dd81cc93e4ef" />
+<img width="596" height="339" alt="image" src="https://github.com/user-attachments/assets/3924c4ec-f9e7-4167-a1e3-85c0e8d2f7ed" />
+
+-Before and After Cleaning-
+<img width="895" height="304" alt="image" src="https://github.com/user-attachments/assets/97d68ab9-077c-4dba-8d9d-02486f7707c5" />
+<img width="891" height="289" alt="image" src="https://github.com/user-attachments/assets/2ce46564-68c2-4d43-b22c-8bf1701baf41" />
+
+-SQL Query-
+<img width="770" height="368" alt="image" src="https://github.com/user-attachments/assets/6669d6d8-5412-46e8-8ad7-9f45df60b370" />
+
+-Data Model Diagram- 
+<img width="878" height="326" alt="image" src="https://github.com/user-attachments/assets/e5d8537d-c997-45f5-87cf-85248fb9a4a4" />
+
+
+## Business Recommendations
+
+###  Who Should We Be Targeting?
+**Key Findings:**
+- CyberSecurity generated the highest lead volume + highest win rate
+- HealthTech generated the highest average customer value
+- MEA generated the highest revenue but highest churn
+- North America has the lowest churn and highest value customers
+
+**Recommendation:**
+Focus acquisition efforts on CyberSecurity and HealthTech companies, particularly in North America. For MEA, investigate why large LogisTech companies (1000+ employees) churn at 55.56%. The data suggests they are being sold Starter plans that do not fit their scale. Fixing plan tier alignment for enterprise LogisTech accounts in MEA could significantly reduce churn while protecting the region's $2.3M in LogisTech revenue.
+
+### How Are We Attracting Them?
+**Key Findings:**
+- Paid Search generated the most leads and revenue
+- Conversion rates across channels were very similar (7–9.3%)
+- No channel had a major conversion advantage
+
+**Recommendation:**
+Continue investing in Paid Search because it drives scale, but shift analysis from channel performance to lead quality. Since conversion rates are nearly identical across sources, improving targeting and ICP alignment is likely to have a greater impact than reallocating channel spend. Newsletter campaigns generate the highest average deal value at $507K and should be prioritized for subscriber growth.
+
+
+### How Are We Converting Them?
+**Key Findings:**
+- Largest drop off occurs at Lead to MQL (47%)
+- Funnel improves significantly after qualification
+- Organic Search has weakest Lead to MQL conversion at 30%
+- LATAM MarTech companies (1-10 employees) convert at 20% with $808K average deal value
+
+**Recommendation:**
+Improve lead qualification and targeting at the top of the funnel. Sales performance is relatively healthy after leads become MQLs, so the highest return opportunity is increasing lead quality before prospects enter the sales process. Prioritize outreach to LATAM MarTech small companies (the highest converting and highest value segment identified in the analysis).
+
+### How Much Are They Worth?
+**Key Findings:**
+- Enterprise accounts generate 63% of ARR ($27.7M)
+- New business ($21.5M) and existing customer revenue ($21M) are nearly equal
+- Expansion revenue declined in 2024 despite growing new business
+
+**Recommendation:**
+Prioritize Enterprise acquisition, retention, and expansion programs. The near equal contribution of new and existing customer revenue confirms the importance of protecting and growing the existing base. The decline in expansion revenue in 2024 is a warning sign that account growth programs need immediate attention to prevent further decline.
+
+
+### Are We Keeping Them?
+**Key Findings:**
+- Poor support is the leading churn reason (48 out of 207 churned customers)
+- Starter customers churn the most at 33.6%
+- Critical accounts churn at 32.4% vs 5% for Healthy accounts
+- Win-back success rate is only 17.7%
+
+**Recommendation:**
+Invest in proactive customer success and support. Build health score monitoring and intervention workflows that trigger action when customers become At Risk rather than waiting until they reach Critical status. Fix support quality first, it is both the top churn reason and likely the reason win back attempts fail, since customers who left due to poor support return to the same environment.
+
+
+###  How Healthy Is The Business Overall?
+**Key Findings:**
+- NRR = 81.69% — below the 100% threshold
+- Business depends on new customer acquisition to sustain revenue
+- Pipeline confidence only moderately aligns with buyer signals (0.44 correlation)
+
+**Recommendation:**
+Make revenue retention the top strategic priority. Focus on reducing churn, improving customer support, and increasing expansion revenue. Pipeline forecasting accuracy should be improved.
+
+---
+
+### Executive Summary Recommendation
+Acquire more of the right customers (CyberSecurity and HealthTech), improve lead quality at the top of the funnel, prioritize Enterprise accounts, reduce support driven churn, and increase retention so growth becomes less dependent on constantly acquiring new customers.
+
+
+## Limitations
+
+While this analysis provides meaningful insights across the full B2B SaaS customer lifecycle, the following limitations should be acknowledged when interpreting findings:
+
+**Data Completeness**
+- 45 customer records have no plan tier recorded, leaving $1.4M in ARR unattributed to any plan segment
+- 49 deal records have no deal value recorded, understating total pipeline and revenue figures
+- 438 company records are missing firmographic data (company size and annual revenue), excluding them from size-based segmentation analysis
+- 400 leads have no assigned rep, affecting rep performance completeness
+
+**Data Model Constraints**
+- Deals and customers are independent branches off the leads table and do not connect directly. Cross analysis between deal attributes (contract type, competitor) and customer outcomes (churn, ARR) required workarounds such as adding `deal_type` directly to the customers table in PostgreSQL.
+- ARR growth is calculated by contract start year rather than as a cumulative ARR snapshot, which understates true business growth since contracts signed in earlier years contribute revenue across multiple years
+
+**Health Score Reliability**
+- Health scores may be understated due to data quality issues in the underlying `product_usage_score` and `nps_score` columns, where invalid values were set to null during cleaning. This affects the reliability of the $42.8M ARR at risk figure and health-based segmentation
+
+**Synthetic Data**
+- The dataset is synthetic and may not capture all real world CRM complexities such as multi contact deals, partial renewals, or mid contract upgrades
+
+**Partial Year Data**
+- 2025 figures represent January to October only and are not directly comparable to full prior years (2022–2024). Year over year comparisons involving 2025 should be treated with caution.
+
