@@ -171,7 +171,6 @@ Missing values were categorised as either **expected nulls** (structurally corre
 ### Correlations
 - **Health score and churn** — Critical customers churned at 32.4% vs 5% for Healthy customers — strong relationship
 - **Product usage score and churn** — low usage scores were associated with higher churn probability
-- **Buyer evidence score and rep deal probability** — 0.44 correlation — moderate, not strong
 - **Discount % and win rate** — no meaningful correlation — higher discounts did not lead to higher win rates
 - **NPS score and churn** — lower NPS customers churned more frequently
 
@@ -307,4 +306,5 @@ While this analysis provides meaningful insights across the full B2B SaaS custom
 
 **Partial Year Data**
 - 2025 figures represent January to October only and are not directly comparable to full prior years (2022–2024). Year over year comparisons involving 2025 should be treated with caution.
+
 
