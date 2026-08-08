@@ -174,3 +174,26 @@ Missing values were categorised as either **expected nulls** (structurally corre
 - **Buyer evidence score and rep deal probability** — 0.44 correlation — moderate, not strong
 - **Discount % and win rate** — no meaningful correlation — higher discounts did not lead to higher win rates
 - **NPS score and churn** — lower NPS customers churned more frequently
+
+  ## Key Insights
+
+### 1. Revenue Growth vs Retention Gap
+Revenue growth is strong, but NRR of 81.69% reveals the business is relying on new customer acquisition to offset churn. The business cannot sustain growth from its existing customer base alone. Improving retention is the highest leverage opportunity available.
+
+### 2. ICP Clarity
+Mid to large companies across multiple industries and regions represent the strongest customer segments. North America MarTech (11-50 employees, $924K avg deal value) and Europe CyberSecurity (201-500 employees) are the highest priority acquisition targets based on combined conversion rate, win rate, and churn performance.
+
+### 3. Lead Quality Over Channel Volume
+Paid Search generated the highest lead volume, but conversion rates across all channels were nearly identical (7–9.3%). Channel allocation is not the problem, lead quality and ICP targeting are. Better targeting could improve conversion performance across the entire funnel without increasing spend.
+
+### 4. Top of the Funnel Bottleneck
+Only 47% of leads progressed to MQL. The largest single drop off in the funnel. Sales performance improved significantly after qualification, indicating that fixing lead quality at the top of the funnel would have the greatest downstream impact on pipeline and revenue.
+
+### 5. Expansion Revenue Declining
+New business consistently outpaces expansion revenue, and expansion actually declined in 2024 ($2.3M → $2.1M) despite growing new business. The business is not successfully growing its existing customer base even as it acquires new customers. A warning sign for long term revenue sustainability.
+
+### 6. Customer Health Predicts Churn
+Customer health score is the strongest early warning signal for churn, Critical accounts churn at 32.4% vs 5% for Healthy accounts. Poor support is the primary churn driver (48 out of 207 churned customers). With win back success at only 17.7%, preventing churn is significantly more valuable than recovering lost customers.
+
+### 7. Pipeline at Risk
+Despite a $211.55M weighted pipeline, $13.23M in ARR is at risk from upcoming renewals concentrated in Critical and At Risk accounts. Customer retention is the primary lever for protecting forecast reliability and future revenue.
