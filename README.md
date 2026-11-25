@@ -202,8 +202,18 @@ Despite a $211.55M weighted pipeline, $13.23M in ARR is at risk from upcoming re
 Visuals Preview
 -Dashboard Screenshots-
 
-<img width="614" height="341" alt="B2B CRM REVOPS OVERVIEW" src="https://github.com/user-attachments/assets/89e47107-c1f1-4f60-ad87-dd81cc93e4ef" />
-<img width="596" height="339" alt="image" src="https://github.com/user-attachments/assets/3924c4ec-f9e7-4167-a1e3-85c0e8d2f7ed" />
+<img width="620" height="340" alt="image" src="https://github.com/user-attachments/assets/aff8ff9f-792a-4f00-af02-545efe1f5cca" />
+
+<img width="626" height="343" alt="image" src="https://github.com/user-attachments/assets/dd0f1966-324d-488a-86aa-b8ecba17e981" />
+
+
+<img width="607" height="351" alt="image" src="https://github.com/user-attachments/assets/1fa64f6c-6a7a-4f50-b505-61b651938dd6" />
+
+<img width="619" height="347" alt="image" src="https://github.com/user-attachments/assets/7f2a9fbe-9afe-472b-b279-b2d412b732e1" />
+
+<img width="613" height="345" alt="image" src="https://github.com/user-attachments/assets/aeb29d54-ab66-4fdc-a760-ae885fee6737" />
+
+<img width="613" height="344" alt="image" src="https://github.com/user-attachments/assets/9b758bf8-1459-4a31-86e8-330b0eba4a8d" />
 
 -Before and After Cleaning-
 <img width="895" height="304" alt="image" src="https://github.com/user-attachments/assets/97d68ab9-077c-4dba-8d9d-02486f7707c5" />
