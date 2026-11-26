@@ -213,10 +213,12 @@ Visuals Preview
 
 <img width="613" height="345" alt="image" src="https://github.com/user-attachments/assets/aeb29d54-ab66-4fdc-a760-ae885fee6737" />
 
-<img width="613" height="344" alt="image" src="https://github.com/user-attachments/assets/9b758bf8-1459-4a31-86e8-330b0eba4a8d" />
+<img width="605" height="341" alt="image" src="https://github.com/user-attachments/assets/62110d73-47f4-4c78-b086-134af80bc176" />
+
 
 -Before and After Cleaning-
 <img width="895" height="304" alt="image" src="https://github.com/user-attachments/assets/97d68ab9-077c-4dba-8d9d-02486f7707c5" />
+
 <img width="891" height="289" alt="image" src="https://github.com/user-attachments/assets/2ce46564-68c2-4d43-b22c-8bf1701baf41" />
 
 -SQL Query-
